@@ -36,7 +36,7 @@ public:
 int main()
 {
     Solution s;
-    cout << s.addStrings("1", "9") << endl;
-    cout << s.addStrings("11", "123") << endl;
+    cout << s.addStrings("1", "9") << endl;    // 10
+    cout << s.addStrings("11", "123") << endl; // 134
     return 0;
 }
