@@ -28,7 +28,7 @@ public:
 int main()
 {
     Solution s;
-    // cout << s.reverse(123) << endl;
-    cout << s.reverse(-123) << endl;
+    // cout << s.reverse(123) << endl; // 321
+    cout << s.reverse(-123) << endl; // -321
     return 0;
 }
