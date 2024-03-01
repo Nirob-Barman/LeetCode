@@ -64,6 +64,12 @@ int main()
     root->right->right = new TreeNode(7);
     // cout << Solution().maxDepth(root) << endl;
     Solution s;
-    cout << s.maxDepth(root) << endl;
+    cout << s.maxDepth(root) << endl; // 2
     return 0;
 }
+
+//     3
+//    / \
+//   9   20
+//      /  \
+//     15   7
