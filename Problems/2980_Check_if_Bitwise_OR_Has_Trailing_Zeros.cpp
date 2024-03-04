@@ -7,21 +7,17 @@ class Solution
 public:
     bool hasTrailingZeros(vector<int> &nums)
     {
-        int count = 0;
+        int evenCount = 0;
 
         for (auto num : nums)
         {
-            if (num == 0)
+            if (num % 2 == 0)
             {
-                count++;
-            }
-            else
-            {
-                break;
+                evenCount++;
             }
         }
 
-        return count % 2 == 0;
+        return evenCount >= 2;
     }
 };
 
