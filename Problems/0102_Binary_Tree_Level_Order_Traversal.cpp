@@ -65,7 +65,8 @@ int main()
     root->right = new TreeNode(3);
     root->left->left = new TreeNode(4);
     root->left->right = new TreeNode(5);
-    root->right->right = new TreeNode(6);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
 
     vector<vector<int>> ans = s.levelOrder(root);
 
@@ -84,12 +85,18 @@ int main()
 //     1
 //    / \
 //   2   3
-//  / \   \
-// 4   5   6
+//  / \ / \
+// 4  5 6  7
 
 // At the first level, there is only one node (root: 1). The size of the queue is 1, and the level vector contains the value [1].
 // At the second level, there are two nodes (2 and 3). The size of the queue is 2, and the level vector contains the values [2, 3].
 // At the third level, there are four nodes (4, 5, 6, 7). The size of the queue is 4, and the level vector contains the values [4, 5, 6, 7].
+
+//     1
+//    / \
+//   2   3
+//  / \   \
+// 4   5   6
 
 // First Iteration (Level 1):
 // The queue initially contains only the root node (1).
