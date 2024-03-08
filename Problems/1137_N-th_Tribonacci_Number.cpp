@@ -17,16 +17,35 @@ public:
 
         // Bottom Up DP solution: O(n)
         // Tabulaization
-        int TribonacciNumbers[38];
-        TribonacciNumbers[0] = 0;
-        TribonacciNumbers[1] = TribonacciNumbers[2] = 1;
+        // int TribonacciNumbers[38];
+        // TribonacciNumbers[0] = 0;
+        // TribonacciNumbers[1] = TribonacciNumbers[2] = 1;
 
-        for (int i = 3; i <= n; i++)
+        // for (int i = 3; i <= n; i++)
+        // {
+        //     TribonacciNumbers[i] = TribonacciNumbers[i - 1] + TribonacciNumbers[i - 2] + TribonacciNumbers[i - 3];
+        // }
+
+        // return TribonacciNumbers[n];
+
+        // Memoization
+        vector<int> memo(n + 1, -1);
+        return memoization(n, memo);
+    }
+
+    int memoization(int n, vector<int> &memo)
+    {
+        if (n < 2)
+            return n;
+        if (n == 2)
+            return 1;
+
+        if (memo[n] != -1)
         {
-            TribonacciNumbers[i] = TribonacciNumbers[i - 1] + TribonacciNumbers[i - 2] + TribonacciNumbers[i - 3];
+            return memo[n];
         }
 
-        return TribonacciNumbers[n];
+        return memo[n] = memoization(n - 1, memo) + memoization(n - 2, memo) + memoization(n - 3, memo);
     }
 };
 
