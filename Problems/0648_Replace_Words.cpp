@@ -10,6 +10,7 @@ public:
         unordered_set<string> s(dictionary.begin(), dictionary.end());
         string ans = "";
         int i = 0;
+
         while (i < sentence.size())
         {
             string word = "";
@@ -47,6 +48,7 @@ int main()
 {
     vector<string> dictionary = {"cat", "bat", "rat"};
     string sentence = "the cattle was rattled by the battery";
+    
     Solution s;
     cout << s.replaceWords(dictionary, sentence) << endl; // the cat was rat by the bat
     return 0;
