@@ -10,3 +10,11 @@ use leetcode;
 -- insert into Product (product_id, product_name) values ('100', 'Nokia');
 -- insert into Product (product_id, product_name) values ('200', 'Apple');
 -- insert into Product (product_id, product_name) values ('300', 'Samsung');
+
+-- select * from Sales;
+-- select * from Product;
+
+select P.product_name, S.year, S.price 
+from Sales as S
+join product as P
+on S.product_id = P.product_id;
