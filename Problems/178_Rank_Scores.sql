@@ -8,3 +8,7 @@ use leetcode;
 -- insert into Scores (id, score) values ('4', '3.85');
 -- insert into Scores (id, score) values ('5', '4.0');
 -- insert into Scores (id, score) values ('6', '3.65');
+
+select score, (select count(distinct score) from Scores where score >= s.score) 'rank'
+from Scores as s
+order by score desc
