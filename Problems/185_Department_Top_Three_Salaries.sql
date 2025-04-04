@@ -1,3 +1,5 @@
+-- 185. Department Top Three Salaries
+
 use leetcode;
 
 -- Create table If Not Exists Employee (id int, name varchar(255), salary int, departmentId int);
@@ -19,4 +21,13 @@ select d.name as Department, e.name as Employee, e.salary as Salary
 from employee e
 join Department d on e.departmentId = d.id
 where (select count(distinct salary) from Employee emp where emp.departmentId = e.departmentId and emp.salary >= e.salary) <= 3
-order by Department, Salary desc
+order by Department, Salary desc;
+
+select Department, Employee, Salary
+from (
+select d.name as Department, e.name as Employee, e.salary as Salary,
+dense_rank() over(partition by departmentId order by Salary desc) as d_rank
+from employee e
+join Department d on e.departmentId = d.id
+) T 
+where d_rank <= 3;
