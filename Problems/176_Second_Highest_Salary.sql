@@ -1,3 +1,5 @@
+-- 176. Second Highest Salary
+
 use leetcode;
 
 -- Create table If Not Exists Employee (id int, salary int);
@@ -9,3 +11,10 @@ use leetcode;
 select max(salary) AS SecondHighestSalary 
 from Employee
 where salary < (select max(salary) from Employee);
+
+select 
+(select distinct salary
+from Employee
+order by salary desc
+limit 1 offset 1
+) as SecondHighestSalary;
