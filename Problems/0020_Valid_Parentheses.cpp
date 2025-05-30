@@ -55,3 +55,10 @@ int main()
     cout << s.isValid("]") << endl; // false
     return 0;
 }
+
+// Input     --> Why it returns false
+// "]"       --> Closing ] without matching [
+// "([)]"    --> Mismatched nesting: [ closed by )
+// "(]"      --> Mismatched types: ( closed by ]
+// "((("     --> Remaining unmatched opening brackets
+// "((])"    --> Closing ] doesn't match opening (
