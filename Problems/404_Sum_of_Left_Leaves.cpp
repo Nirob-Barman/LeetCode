@@ -44,7 +44,19 @@ public:
         // }
         // return leftSum;
 
-        return dfs(root, false);
+        // return dfs(root, false);
+        int sum = 0;
+        if (root == NULL)
+        {
+            return 0;
+        }
+        if (root->left && root->left->left == NULL && root->left->right == NULL)
+        {
+            sum += root->left->val;
+        }
+        sum += sumOfLeftLeaves(root->left);
+        sum += sumOfLeftLeaves(root->right);
+        return sum;
     }
 
     int dfs(TreeNode *root, bool isLeft)
