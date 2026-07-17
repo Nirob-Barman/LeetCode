@@ -1,1 +1,3 @@
-Range Sum: 32
+Found node: 2
+Subtree Inorder: 1 2 3 
+Full Tree Inorder: 1 2 3 4 7 
