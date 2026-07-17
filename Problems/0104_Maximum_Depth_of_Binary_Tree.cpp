@@ -22,7 +22,7 @@ public:
             return 0;
         }
 
-        // return max(maxDepth(root->left), maxDepth(root->right)) + 1; // Here, 1 is for root node
+        // return max(maxDepth(root->left), maxDepth(root->right)) + 1; // Here, Add 1 to include the current node in the depth.
 
         queue<TreeNode *> q;
         q.push(root);
