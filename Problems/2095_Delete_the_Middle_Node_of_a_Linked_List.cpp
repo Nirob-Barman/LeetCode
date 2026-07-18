@@ -28,6 +28,7 @@ public:
     {
         ListNode *temp = head;
         int len = len_of_list(temp);
+        // if the list has only one node, return NULL due to deletion
         if (len == 1)
             return NULL;
         // temp has reached the end of the list (NULL)
