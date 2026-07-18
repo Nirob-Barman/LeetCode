@@ -28,9 +28,9 @@ public:
     {
         ListNode *temp = head;
         int len = len_of_list(temp);
-        // temp has reached the end of the list (NULL)
         if (len == 1)
             return NULL;
+        // temp has reached the end of the list (NULL)
         temp = head;
         for (int i = 1; i < len / 2; i++)
         {
